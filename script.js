@@ -1,7 +1,8 @@
 (function createListener() {
+
     const body = document.querySelector('body');
-    body.addEventListener('click', (e) => {
-        const clickedElement = e.target;
+    body.addEventListener('click', (event) => {
+        const clickedElement = event.target;
         if (clickedElement.classList.contains('get-feedback-popup')) {
             openFeebackPopup();
         };
@@ -9,8 +10,38 @@
         if (clickedElement.classList.contains('price__nav-item')) {
             showPrice(clickedElement);
         };
+
+    });
+
+    const menuItemCollection = document.querySelectorAll('.menu__item-with-hide-menu');
+    const menuItemArray = Array.from(menuItemCollection);
+    body.addEventListener('click', hideMenu);
+    menuItemArray.forEach( item => {
+        item.addEventListener('click', function() {
+            showMenu(this);
+        });
     });
 }) ();
+
+function showMenu(blok) {    
+    const popupMenu = blok.querySelector('.menu__popup-wrap');
+    const underline = blok.querySelector('.menu__item-underline');
+    
+    setTimeout(function() {
+        popupMenu.classList.remove('hidden');
+        underline.classList.remove('hidden');
+    }, 0);
+};
+
+function hideMenu() {
+    const allPopupMenuCollection = document.querySelectorAll('.menu__popup-wrap');
+    allPopupMenuArray = Array.from(allPopupMenuCollection);
+    allPopupMenuArray.forEach( menu => menu.classList.add('hidden') );
+
+    const allUnderlineCollection = document.querySelectorAll('.menu__item-underline');
+    allUnderlineArray = Array.from(allUnderlineCollection);
+    allUnderlineArray.forEach( underline => underline.classList.add('hidden') );
+};
 
 function openFeebackPopup() {
     const feedbackForm = document.querySelector('.feedback-form__gag-wrap');
@@ -116,4 +147,6 @@ const priceBase = {
         price: '17 руб./км',
     },
 };
+
+
 
