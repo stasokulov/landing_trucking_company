@@ -149,6 +149,7 @@
 }
 
 @media (max-width: 1000px) {
+
     .price__nav-item {
         width: auto;
     }
@@ -163,6 +164,10 @@
 }
 
 @media (max-width: 660px) {
+    .price__nav {
+        width: auto;
+        margin: 0 -10px 44px -10px;
+    }
     .price__nav-item {
         padding: 0 6px;
     }
@@ -172,9 +177,24 @@
     }
 
     .price__description-wrap {
-
+        margin: 0 -10px 50px;
         width: auto;
         flex-wrap: wrap;
         height: auto;
     }
+    .price__right-side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 50px 0;
+    }
 }
+
+
+
+
+
+
+/* .content {
+    background-color: green;
+} */
