@@ -21,6 +21,8 @@
             showMenu(this);
         });
     });
+
+    
 }) ();
 
 function showMenu(blok) {    
@@ -50,6 +52,11 @@ function openFeebackPopup() {
     btnCloseFeedbackForm.addEventListener('click', (e) => {
         feedbackForm.classList.add('hidden');
     });
+
+    //Предотвращаем прокрутку под модальным окном.
+    feedbackForm.addEventListener('wheel', (e) => {
+        e.preventDefault();
+    });
 };
 
 function showPrice(clickedElement) {
@@ -70,7 +77,7 @@ function highlightPriceButton(clickedElement) {
 function fillDataPrice(clickedElement) {
     //Получаем из базы данные по выбранным машинам.
     const tons = clickedElement.dataset.tons;
-    const dataCar = priceBase[`tons_${tons}`];
+    const dataCar = priceBase.find( item => item.tons == tons);
 
     //Вставляем в разметку изображения автомобиля.
     const imgCar = document.querySelector('.price__img');
@@ -91,7 +98,7 @@ function fillDataPrice(clickedElement) {
     const modelsPlace = document.querySelector('.price__models');
     modelsPlace.innerHTML = '';
     dataCar.models.forEach(element => {
-        const model = `- ${element}`;
+        const model = `${element}`;
         const span = createItemCarModel();
         span.innerHTML = model;
         modelsPlace.appendChild(span);
@@ -105,8 +112,8 @@ function createItemCarModel() {
     return span;
 };
 
-const priceBase = {
-    'tons_1.5': {
+const priceBase = [
+    {   tons: 1.5,
         src: '1,5tons.png',
         models: ['Газель', 'Isuzu', 'Kia', 'Mitsubishi'],
         long: 'от 3 м. до 5 м',
@@ -114,7 +121,7 @@ const priceBase = {
         capacity: 'от 1.5 до 2 т.',
         price: '15 руб./км',
     },
-    tons_3: {
+    {   tons: 3,
         src: '3tons.png',
         models: ['ГАЗ «Бычок»', 'Валдай', 'Isuzu', 'Hino', 'Mazda'],
         long: 'от 4,5 м. до 6,5 м',
@@ -122,7 +129,7 @@ const priceBase = {
         capacity: 'от 3 до 4 т.',
         price: '17 руб./км',
     },
-    tons_5: {
+    {   tons: 5,
         src: '5tons.png',
         models: ['Газель', 'Isuzu', 'Kia', 'Mitsubishi'],
         long: 'от 4,5 м. до 6,5 м',
@@ -130,7 +137,7 @@ const priceBase = {
         capacity: 'от 3 до 4 т.',
         price: '17 руб./км',
     },
-    tons_10: {
+    {   tons: 10,
         src: '10tons.png',
         models: ['Hino', 'Volvo', 'КамАЗ', 'Isuzu'],
         long: 'от 4,5 м. до 6,5 м',
@@ -138,7 +145,7 @@ const priceBase = {
         capacity: 'от 3 до 4 т.',
         price: '17 руб./км',
     },
-    tons_20: {
+    {   tons: 20,
         src: '20tons.png',
         models: ['Hino', 'Volvo', 'КамАЗ', 'Isuzu'],
         long: 'от 4,5 м. до 6,5 м',
@@ -146,7 +153,7 @@ const priceBase = {
         capacity: 'от 3 до 4 т.',
         price: '17 руб./км',
     },
-};
+];
 
 
 

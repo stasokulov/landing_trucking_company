@@ -907,6 +907,8 @@ body {
     width: 240px;
     background-color: #e6e6e6;
     border: none;
+    box-sizing: border-box;
+    padding: 0 10px 0 10px;
 }
 
 .feedback-form__text {
@@ -1180,6 +1182,7 @@ body {
     }
 
     .menu__item {
+        position: static;
         padding: 0 10px;
         font-size: 12px;
         border: none;
@@ -1191,6 +1194,14 @@ body {
 
     .menu__item_mobile {
         display: flex;
+    }
+
+    .menu__popup-wrap {
+        left: 0;
+        right: 0;
+        top: 50px;
+        width: auto;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
 
     /* banner */

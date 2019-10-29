@@ -125,9 +125,20 @@
 }
 
 .price__models-text {
+    display: flex;
+    align-items: center;
     font-size: 13px;
     color: #505050;
     line-height: 1.9;
+}
+
+.price__models-text:before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 1px;
+    background-color: #505050;
+    margin: 5px;
 }
 
 .price__description-text {
