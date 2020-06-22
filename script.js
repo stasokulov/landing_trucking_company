@@ -4,9 +4,11 @@
     body.addEventListener('click', (event) => {
         const clickedElement = event.target;
         if (clickedElement.classList.contains('get-feedback-popup')) {
-            openFeebackPopup();
+            openFeedbackPopup();
         };
-    
+        if (clickedElement.classList.contains('not-ready')) {
+            openSectionInDevelopmentPopup();
+        };
         if (clickedElement.classList.contains('price__nav-item')) {
             showPrice(clickedElement);
         };
@@ -22,13 +24,13 @@
         });
     });
 
-    
+
 }) ();
 
-function showMenu(blok) {    
+function showMenu(blok) {
     const popupMenu = blok.querySelector('.menu__popup-wrap');
     const underline = blok.querySelector('.menu__item-underline');
-    
+
     setTimeout(function() {
         popupMenu.classList.remove('hidden');
         underline.classList.remove('hidden');
@@ -45,7 +47,7 @@ function hideMenu() {
     allUnderlineArray.forEach( underline => underline.classList.add('hidden') );
 };
 
-function openFeebackPopup() {
+function openFeedbackPopup() {
     const feedbackForm = document.querySelector('.feedback-form__gag-wrap');
     const btnCloseFeedbackForm = document.querySelector('.feedback-form__close-wrap');
     feedbackForm.classList.remove('hidden');
@@ -55,6 +57,21 @@ function openFeebackPopup() {
 
     //Предотвращаем прокрутку под модальным окном.
     feedbackForm.addEventListener('wheel', (e) => {
+        e.preventDefault();
+    });
+};
+
+function openSectionInDevelopmentPopup() {
+    const popup = document.querySelector('.section-in-development');
+    const btnClosePopup = document.querySelector('.section-in-development__close-wrap');
+    popup.classList.remove('hidden');
+    btnClosePopup.addEventListener('click', (e) => {
+        popup.classList.add('hidden');
+    });
+
+
+    //Предотвращаем прокрутку под модальным окном.
+    popup.addEventListener('wheel', (e) => {
         e.preventDefault();
     });
 };
