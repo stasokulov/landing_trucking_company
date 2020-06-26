@@ -95,7 +95,7 @@ body {
     width: 50%;
     height: 26px;
     top: -25px;
-    right: 0; 
+    right: 0;
 }
 
 .content {
@@ -162,7 +162,7 @@ body {
     align-items: center;
     padding: 0 0 0 20px;
     box-sizing: border-box;
-} 
+}
 
 .content__jut-text {
     font-size: 13px;
@@ -188,13 +188,13 @@ body {
     left: 0;
     background-color: rgb(209, 44, 44);
     width: 80px;
-    height: 3px;      
+    height: 3px;
 }
 
 .howtoship__link {
     text-decoration: underline;
     cursor: pointer;
-    color: rgb(81, 138, 50);     
+    color: rgb(81, 138, 50);
 }
 
 .feedback-btn {
@@ -208,7 +208,8 @@ body {
 }
 
 .feedback-btn:hover {
-    transform: translateY(-2px);
+    /*transform: translateY(-2px);*/
+    box-shadow: 0 0 7px 0;
 }
 
 .feedback-btn_white {
@@ -302,7 +303,7 @@ body {
 .header__logo {
     display: flex;
     align-items: center;
-}  
+}
 
 .logo__icon {
     margin: 0 18px 0 0;
@@ -465,7 +466,7 @@ body {
     border-top-color: #fff;
     border-left-width: 4px;
     border-right-width: 4px;
-    border-style: solid;  
+    border-style: solid;
 }
 
 .menu__popup-wrap {
@@ -612,8 +613,8 @@ body {
     font-size: 13px;
     font-family: "OpenSans";
     color: rgb(80, 80, 80);
-    line-height: 1.9;  
-    margin: 0 0 0 0;    
+    line-height: 1.9;
+    margin: 0 0 0 0;
 }
 
 
@@ -632,7 +633,7 @@ body {
 
 .advantages__title {
     margin: 0 0 54px 0;
-    color: #fff;      
+    color: #fff;
 }
 
 .advantages__item {
@@ -670,11 +671,11 @@ body {
 
 .howtoship__title {
     margin: 0 0 54px 0;
-    color: rgb(37, 37, 37);  
+    color: rgb(37, 37, 37);
 }
 
 .howtoship__item {
-    color: rgb(80, 80, 80);      
+    color: rgb(80, 80, 80);
 }
 
 .howtoship__request {
@@ -744,7 +745,7 @@ body {
     position: relative;
     background-color: rgb(209, 44, 44);
     width: 118px;
-    height: 25px;      
+    height: 25px;
 }
 
 .trucks__item-jut_size {
@@ -786,7 +787,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 35px 0 40px 0;
-    border-bottom: solid 1px rgb(97, 97, 97);      
+    border-bottom: solid 1px rgb(97, 97, 97);
 }
 
 .footer__contact-wrap {
@@ -816,7 +817,7 @@ body {
     font-size: 13px;
     font-family: "OpenSans";
     color: rgb(138, 138, 138);
-    line-height: 2.308;  
+    line-height: 2.308;
 }
 
 /* popupes */
@@ -860,7 +861,8 @@ body {
     width: 240px;
 }
 
-.feedback-form__close-wrap {
+.feedback-form__close-wrap,
+.section-in-development__close-wrap {
     display: flex;
     align-items: center;
     position: absolute;
@@ -961,7 +963,7 @@ body {
     color: rgb(102, 51, 51);
     line-height: 1.35;
 }
-  
+
 @media (max-width: 1000px) {
 
     .content {
@@ -1042,9 +1044,9 @@ body {
 
     .trucks__item-jut_mass {
         width: 100px;
-        height: 22px;      
+        height: 22px;
     }
-    
+
     .trucks__item-jut_size {
         right: -200px;
         width: 220px;
@@ -1075,9 +1077,9 @@ body {
     .footer__contact-data {
         width: auto;
     }
-    
+
     .companies__item {
-        font-size: 10px; 
+        font-size: 10px;
     }
 
 }
@@ -1092,7 +1094,7 @@ body {
     .banner {
         height: 400px;
     }
-        
+
 }
 
 
@@ -1113,7 +1115,7 @@ body {
     .content__jut-text {
         font-size: 10px;
     }
-    
+
     .content__title {
         height: auto;
         font-size: 20px;
@@ -1259,13 +1261,13 @@ body {
         width: auto;
         padding: 0 0 30px 0;
     }
-    
 
 
 
-    
+
+
     .companies__item {
-        font-size: 10px; 
+        font-size: 10px;
     }
 */
 
