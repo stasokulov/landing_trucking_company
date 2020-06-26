@@ -98,7 +98,7 @@ function fillDataPrice(clickedElement) {
 
     //Вставляем в разметку изображения автомобиля.
     const imgCar = document.querySelector('.price__img');
-    imgCar.setAttribute( 'src', `img/${dataCar.src}` );
+    imgCar.setAttribute( 'src', `../img/${dataCar.src}` );
 
     //Вставляем характеристики.
     const long = document.querySelector('.price__long');
